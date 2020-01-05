@@ -10,6 +10,20 @@
 
 $govuk-font-family-gds-transport: "GDS Transport", Arial, sans-serif;
 
+/// Official font for use with WCC.GOVT.NZ
+///
+/// @type List
+/// @access public
+
+$govuk-font-family-guardian-sans: "Guardian Sans", Arial, sans-serif;
+
+/// Another font for use with WCC.GOVT.NZ
+///
+/// @type List
+/// @access public
+
+$govuk-font-family-helvetica-neue: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 /// List of font families to use if using NTA (old font 'stack' for
 /// GOV.UK)
 ///

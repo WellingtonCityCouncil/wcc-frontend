@@ -4,8 +4,9 @@
     <div class="govuk-header__logo">
       <a href="{{ params.homepageUrl | default('/') }}" class="govuk-header__link govuk-header__link--homepage">
         <span class="govuk-header__logotype">
-          <image src="{{ params.assetsPath | default('/assets/images') }}/wcc-logo.png" xlink:href="" class="govuk-header__logotype-crown-fallback-image" width="245" height="65"></image>
-          <span class="govuk-header__logotype-text"></span>
+          <span class="govuk-header__logotype-text">
+            Wellington City Council
+          </span>
         </span>
         {% if (params.productName) %}
         <span class="govuk-header__product-name">

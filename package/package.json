@@ -1,26 +1,29 @@
 {
-  "name": "govuk-frontend",
-  "description": "GOV.UK Frontend contains the code you need to start building a user interface for government platforms and services.",
+  "name": "@WellingtonCityCouncil/wcc-frontend",
+  "description": "WCC Frontend contains the code you need to start building a user interface for WCC platforms and services.",
   "version": "3.4.0",
-  "main": "govuk/all.js",
-  "sass": "govuk/all.scss",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "main": "wcc/all.js",
+  "sass": "wcc/all.scss",
   "engines": {
     "node": ">= 4.2.0"
   },
   "author": {
-    "name": "GOV.UK Design System Team (Government Digital Service)",
-    "email": "design-system-developers@digital.cabinet-office.gov.uk"
+    "name": "Wellington City Council",
+    "email": "info@wcc.govt.nz"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alphagov/govuk-frontend.git"
+    "url": "https://github.com/wellingtoncitycouncil/wcc-frontend.git"
   },
   "bugs": {
-    "url": "https://github.com/alphagov/govuk-frontend/issues"
+    "url": "https://github.com/wellingtoncitycouncil/wcc-frontend/issues"
   },
-  "homepage": "https://github.com/alphagov/govuk-frontend#readme",
+  "homepage": "https://github.com/wellingtoncitycouncil/wcc-frontend#readme",
   "keywords": [
-    "govuk",
+    "wcc",
     "frontend",
     "design system",
     "template"

@@ -18,7 +18,7 @@
     }
   }
 
-  %govuk-list > li {
+  %govuk-list>li {
     // Lists without numbers or bullets should always have extra space between
     // list items. Lists with numbers or bullets only have this extra space on
     // tablet and above
@@ -39,13 +39,54 @@
     list-style-type: decimal;
   }
 
-  %govuk-list--bullet > li,
-  %govuk-list--number > li {
+  %govuk-list--circle {
+    padding-left: govuk-spacing(7);
+    list-style-type: none;
+
+    counter-reset: circle-counter;
+  }
+
+  %govuk-list--bullet>li,
+  %govuk-list--number>li,
+  %govuk-list--circle>li {
     margin-bottom: 0;
 
     @include govuk-media-query($from: tablet) {
       margin-bottom: govuk-spacing(1);
     }
+  }
+
+  %govuk-list--circle>li {
+    position: relative;
+    margin-bottom: govuk-spacing(5);
+    padding-left: govuk-spacing(1);
+    counter-increment: circle-counter;
+  }
+
+  %govuk-list--circle>li::before {
+    content: counter(circle-counter);
+    position: absolute;
+    top: 0;
+    left: calc(-1 * 32px - 10px);
+    width: 32px;
+    height: 32px;
+    border: 2px solid govuk-colour("black", $legacy: #000000);
+    border-radius: 50%;
+    background: govuk-colour("white", $legacy: #ffffff);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 32px;
+    text-align: center;
+  }
+
+  %govuk-list--circle>li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 36px;
+    bottom: -25px;
+    left: -25px;
+    width: 2px;
+    background: govuk-colour("black", $legacy: #000000);
   }
 
   .govuk-list--bullet {
@@ -54,5 +95,9 @@
 
   .govuk-list--number {
     @extend %govuk-list--number;
+  }
+
+  .govuk-list--circle {
+    @extend %govuk-list--circle;
   }
 }

@@ -1,6 +1,8 @@
-@import "../settings/all";
-@import "../tools/all";
-@import "../helpers/all";
+@if not mixin-exists("govuk-exports") {
+  @warn "Importing items from the core layer without first importing `base` is deprecated, and will no longer work as of GOV.UK Frontend v4.0.";
+}
+
+@import "../base";
 
 @include govuk-exports("govuk/core/lists") {
 
@@ -89,6 +91,14 @@
     background: govuk-colour("black", $legacy: #000000);
   }
 
+  %govuk-list--spaced > li {
+    margin-bottom: govuk-spacing(2);
+
+    @include govuk-media-query($from: tablet) {
+      margin-bottom: govuk-spacing(3);
+    }
+  }
+
   .govuk-list--bullet {
     @extend %govuk-list--bullet;
   }
@@ -99,5 +109,9 @@
 
   .govuk-list--circle {
     @extend %govuk-list--circle;
+  }
+
+  .govuk-list--spaced {
+    @extend %govuk-list--spaced;
   }
 }

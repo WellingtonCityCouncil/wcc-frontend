@@ -14,11 +14,15 @@
 /// @type Boolean
 /// @access public
 
-$govuk-use-legacy-font: if((
+$govuk-use-legacy-font: if(
+  (
     $govuk-compatibility-govukfrontendtoolkit or
     $govuk-compatibility-govuktemplate or
     $govuk-compatibility-govukelements
-  ), true, false) !default;
+  ),
+  true,
+  false
+) !default;
 
 // =========================================================
 // Font families
@@ -55,7 +59,7 @@ $govuk-font-family-print: sans-serif !default;
 
 $govuk-include-default-font-face: (
   $govuk-font-family == $govuk-font-family-guardian-sans
- ) !default;
+) !default;
 
 // =========================================================
 // Font weights

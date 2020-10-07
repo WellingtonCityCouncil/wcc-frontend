@@ -1,7 +1,7 @@
 {
   "name": "@wellingtoncitycouncil/wcc-frontend",
   "description": "WCC Frontend contains the code you need to start building a user interface for WCC platforms and services.",
-  "version": "3.4.4",
+  "version": "3.4.5",
   "main": "govuk/all.js",
   "sass": "govuk/all.scss",
   "engines": {

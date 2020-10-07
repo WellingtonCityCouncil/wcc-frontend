@@ -38,17 +38,17 @@
 
         @font-face {
           font-family: "Guardian Sans";
-          src: govuk-font-url("GuardianSans-Regular.otf") format("otf");
-          font-weight: regular;
           font-style: normal;
+          font-weight: regular;
+          src: govuk-font-url("GuardianSans-Regular.otf") format("otf");
           font-display: fallback;
         }
 
         @font-face {
           font-family: "Guardian Sans";
-          src: govuk-font-url("GuardianSans-Bold.otf") format("otf");
-          font-weight: bold;
           font-style: normal;
+          font-weight: bold;
+          src: govuk-font-url("GuardianSans-Bold.otf") format("otf");
           font-display: fallback;
         }
       }

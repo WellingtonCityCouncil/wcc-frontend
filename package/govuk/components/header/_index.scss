@@ -245,7 +245,6 @@
 
   .govuk-header__navigation-item--active {
     a {
-
       &:link,
       &:hover,
       &:visited {
@@ -277,7 +276,6 @@
     }
 
     .govuk-header__link {
-
       &:link,
       &:visited {
         color: govuk-colour("black");

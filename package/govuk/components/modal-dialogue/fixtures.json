@@ -1,0 +1,61 @@
+{
+    "component": "modal-dialogue",
+    "fixtures": [
+        {
+            "name": "default",
+            "options": {
+                "id": "modal",
+                "heading": {
+                    "text": "This is a modal dialogue"
+                },
+                "description": {
+                    "html": "<p class=\"govuk-body\">Prompt text for the modal dialogue component goes here</p>"
+                }
+            },
+            "html": "<div id=\"modal\" class=\"govuk-modal-dialogue\" data-module=\"govuk-modal-dialogue\">\n  <div class=\"govuk-modal-dialogue__wrapper\">\n    <dialog class=\"govuk-modal-dialogue__box\" aria-labelledby=\"modal-title\" aria-describedby=\"modal-description\" aria-modal=\"true\" role=\"dialog\" tabindex=\"0\">\n      <div class=\"govuk-modal-dialogue__header\">\n        \n  \n\n\n  \n    \n  \n\n<button type=\"button\" class=\"govuk-button govuk-modal-dialogue__close\" data-module=\"govuk-button\" aria-label=\"Close modal dialogue\">\n  ×\n</button>\n\n      </div>\n      <div class=\"govuk-modal-dialogue__content\">\n        <h2 class=\"govuk-modal-dialogue__heading govuk-heading-l\" id=\"modal-title\">\n          This is a modal dialogue\n        </h2>\n        \n        <div class=\"govuk-modal-dialogue__description\" id=\"modal-description\">\n          <p class=\"govuk-body\">Prompt text for the modal dialogue component goes here</p>\n        </div>\n        \n        \n      </div>\n    </dialog>\n  </div>\n  <div class=\"govuk-modal-dialogue__backdrop\"></div>\n</div>"
+        },
+        {
+            "name": "open",
+            "options": {
+                "id": "modal",
+                "open": true,
+                "heading": {
+                    "text": "This is a modal dialogue"
+                },
+                "description": {
+                    "html": "<p class=\"govuk-body\">Prompt text for the modal dialogue component goes here</p>"
+                }
+            },
+            "html": "<div id=\"modal\" class=\"govuk-modal-dialogue govuk-modal-dialogue--open\" data-module=\"govuk-modal-dialogue\">\n  <div class=\"govuk-modal-dialogue__wrapper\">\n    <dialog class=\"govuk-modal-dialogue__box\" aria-labelledby=\"modal-title\" aria-describedby=\"modal-description\" aria-modal=\"true\" role=\"dialog\" tabindex=\"0\" open>\n      <div class=\"govuk-modal-dialogue__header\">\n        \n  \n\n\n  \n    \n  \n\n<button type=\"button\" class=\"govuk-button govuk-modal-dialogue__close\" data-module=\"govuk-button\" aria-label=\"Close modal dialogue\">\n  ×\n</button>\n\n      </div>\n      <div class=\"govuk-modal-dialogue__content\">\n        <h2 class=\"govuk-modal-dialogue__heading govuk-heading-l\" id=\"modal-title\">\n          This is a modal dialogue\n        </h2>\n        \n        <div class=\"govuk-modal-dialogue__description\" id=\"modal-description\">\n          <p class=\"govuk-body\">Prompt text for the modal dialogue component goes here</p>\n        </div>\n        \n        \n      </div>\n    </dialog>\n  </div>\n  <div class=\"govuk-modal-dialogue__backdrop\"></div>\n</div>"
+        },
+        {
+            "name": "open with scrolling content",
+            "options": {
+                "id": "modal",
+                "open": true,
+                "heading": {
+                    "text": "This is a modal dialogue"
+                },
+                "description": {
+                    "html": "<p class=\"govuk-body\">\n  This is some very long content.\n</p>\n"
+                }
+            },
+            "html": "<div id=\"modal\" class=\"govuk-modal-dialogue govuk-modal-dialogue--open\" data-module=\"govuk-modal-dialogue\">\n  <div class=\"govuk-modal-dialogue__wrapper\">\n    <dialog class=\"govuk-modal-dialogue__box\" aria-labelledby=\"modal-title\" aria-describedby=\"modal-description\" aria-modal=\"true\" role=\"dialog\" tabindex=\"0\" open>\n      <div class=\"govuk-modal-dialogue__header\">\n        \n  \n\n\n  \n    \n  \n\n<button type=\"button\" class=\"govuk-button govuk-modal-dialogue__close\" data-module=\"govuk-button\" aria-label=\"Close modal dialogue\">\n  ×\n</button>\n\n      </div>\n      <div class=\"govuk-modal-dialogue__content\">\n        <h2 class=\"govuk-modal-dialogue__heading govuk-heading-l\" id=\"modal-title\">\n          This is a modal dialogue\n        </h2>\n        \n        <div class=\"govuk-modal-dialogue__description\" id=\"modal-description\">\n          <p class=\"govuk-body\">\n  This is some very long content.\n</p>\n\n        </div>\n        \n        \n      </div>\n    </dialog>\n  </div>\n  <div class=\"govuk-modal-dialogue__backdrop\"></div>\n</div>"
+        },
+        {
+            "name": "open with timeout message",
+            "options": {
+                "id": "modal",
+                "open": true,
+                "role": "alertdialog",
+                "heading": {
+                    "text": "Your session is due to expire in 5 minutes"
+                },
+                "description": {
+                    "html": "<p class=\"govuk-body\">\n  You have not done anything on the service for a while.\n</p>\n<p class=\"govuk-body\">\n  Your session will end in 5 minutes if you do not do anything on the\n  page. You’ll need to start your application again if that happens.\n</p>\n"
+                }
+            },
+            "html": "<div id=\"modal\" class=\"govuk-modal-dialogue govuk-modal-dialogue--open\" data-module=\"govuk-modal-dialogue\">\n  <div class=\"govuk-modal-dialogue__wrapper\">\n    <dialog class=\"govuk-modal-dialogue__box\" aria-labelledby=\"modal-title\" aria-describedby=\"modal-description\" aria-modal=\"true\" role=\"alertdialog\" tabindex=\"0\" open>\n      <div class=\"govuk-modal-dialogue__header\">\n        \n  \n\n\n  \n    \n  \n\n<button type=\"button\" class=\"govuk-button govuk-modal-dialogue__close\" data-module=\"govuk-button\" aria-label=\"Close modal dialogue\">\n  ×\n</button>\n\n      </div>\n      <div class=\"govuk-modal-dialogue__content\">\n        <h2 class=\"govuk-modal-dialogue__heading govuk-heading-l\" id=\"modal-title\">\n          Your session is due to expire in 5 minutes\n        </h2>\n        \n        <div class=\"govuk-modal-dialogue__description\" id=\"modal-description\">\n          <p class=\"govuk-body\">\n  You have not done anything on the service for a while.\n</p>\n<p class=\"govuk-body\">\n  Your session will end in 5 minutes if you do not do anything on the\n  page. You’ll need to start your application again if that happens.\n</p>\n\n        </div>\n        \n        \n      </div>\n    </dialog>\n  </div>\n  <div class=\"govuk-modal-dialogue__backdrop\"></div>\n</div>"
+        }
+    ]
+}

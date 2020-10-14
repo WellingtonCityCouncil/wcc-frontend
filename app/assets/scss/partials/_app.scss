@@ -8,7 +8,7 @@
 
 // Injected into the preview page, that is then put in an iframe
 .app-iframe-in-component-preview {
-  margin: 15px 0;
+  margin: 5px;
 
   // Highlight the whitespace around a component, so you can see without having to
   // inspect it.
@@ -29,6 +29,11 @@
   }
 }
 
+.app-iframe-in-component-preview--full-width {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 // Removes the breakpoint sass-mq debug display
 .app-iframe-in-component-preview:before {
   display: none;
@@ -41,8 +46,16 @@
 .app-component-preview {
   position: relative;
   width: 100%;
-  margin-top: -15px;
-  margin-bottom: 15px;
+  @include govuk-responsive-margin(5, "top");
+  @include govuk-responsive-margin(5, "bottom");
+}
+
+.app-component-preview--full-width,
+.app-component-preview--modal {
+  width: 100%;
+  max-width: none;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .app-component-preview__iframe {
@@ -50,5 +63,15 @@
   position: relative;
   z-index: 20;
   width: 100%;
+  height: 100%;
   border: 0;
+}
+
+// Allow fixed height for "position: fixed" modal
+.app-iframe-in-component-preview--modal {
+  height: 400px;
+
+  @include govuk-media-query ($from: tablet) {
+    height: 500px;
+  }
 }

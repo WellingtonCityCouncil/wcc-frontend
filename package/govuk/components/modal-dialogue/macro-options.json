@@ -1,0 +1,80 @@
+[
+    {
+        "name": "id",
+        "type": "string",
+        "required": true,
+        "description": "The id of the modal dialogue."
+    },
+    {
+        "name": "open",
+        "type": "boolean",
+        "required": true,
+        "description": "If true, modal dialogue element will be visible."
+    },
+    {
+        "name": "headingLevel",
+        "type": "integer",
+        "required": false,
+        "description": "Heading level, from 1 to 6. Default is `2`."
+    },
+    {
+        "name": "classes",
+        "type": "string",
+        "required": false,
+        "description": "Classes to add to the modal dialogue."
+    },
+    {
+        "name": "attributes",
+        "type": "object",
+        "required": false,
+        "description": "HTML attributes (for example data attributes) to add to the modal dialogue."
+    },
+    {
+        "name": "assetsPath",
+        "type": "string",
+        "required": false,
+        "description": "The public path for the assets folder. If not provided it defaults to /assets/images"
+    },
+    {
+        "name": "role",
+        "type": "string",
+        "required": false,
+        "description": "Optional ARIA role attribute."
+    },
+    {
+        "name": "labelledBy",
+        "type": "string",
+        "required": false,
+        "description": "One or more element IDs to add to the modal dialogue `aria-labelledby` attribute, used to provide a heading which labels the dialogue for screenreader users."
+    },
+    {
+        "name": "describedBy",
+        "type": "string",
+        "required": false,
+        "description": "One or more element IDs to add to the modal dialogue `aria-describedby` attribute, used to provide additional text to describe the dialogue for screenreader users."
+    },
+    {
+        "name": "heading.text",
+        "type": "string",
+        "required": true,
+        "description": "The title of the modal dialogue. If `heading.html` is supplied, this is ignored."
+    },
+    {
+        "name": "heading.html",
+        "type": "string",
+        "required": true,
+        "description": "The HTML content for the title of the modal dialogue."
+    },
+    {
+        "name": "description.text",
+        "type": "string",
+        "required": true,
+        "description": "The modal dialog’s prompt text. If `description.html` is supplied, this is ignored."
+    },
+    {
+        "name": "description.html",
+        "type": "string",
+        "required": true,
+        "description": "The HTML content for the modal dialog’s prompt text."
+    }
+]

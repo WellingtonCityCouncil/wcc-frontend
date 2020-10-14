@@ -152,7 +152,7 @@ module.exports = (options) => {
     const componentName = req.params.component
     const requestedExampleName = req.params.example || 'default'
 
-    const previewLayout = res.locals.componentData.previewLayout || 'layout'
+    let previewLayout = res.locals.componentData.previewLayout || 'layout'
 
     const exampleConfig = res.locals.componentData.examples.find(
       example => example.name.replace(/ /g, '-') === requestedExampleName
@@ -164,16 +164,35 @@ module.exports = (options) => {
 
     // Construct and evaluate the component with the data for this example
     const macroName = helperFunctions.componentNameToMacroName(componentName)
-    const macroParameters = JSON.stringify(exampleConfig.data, null, '\t')
+    const macroContext = { data: exampleConfig.data, caller: exampleConfig.caller }
 
-    res.locals.componentView = env.renderString(
-      `{% from '${componentName}/macro.njk' import ${macroName} %}
-      {{ ${macroName}(${macroParameters}) }}`
-    )
+    // Build macro view
+    let macroString = `{% from '${componentName}/macro.njk' import ${macroName} %}`
+
+    // Macro is a caller
+    if (typeof exampleConfig.caller === 'object') {
+      macroString += `
+        {% call ${macroName}(data) %}
+          {{ caller.html | safe if caller.html else caller.text }}
+        {% endcall %}
+      `
+    } else {
+      macroString += `{{ ${macroName}(data) }}`
+    }
+
+    res.locals.componentView = env.renderString(macroString, macroContext)
 
     let bodyClasses = ''
+
+    // Customise iFrame preview
     if (req.query.iframe) {
       bodyClasses = 'app-iframe-in-component-preview'
+
+      if (previewLayout) {
+        bodyClasses += ` app-iframe-in-component-preview-${previewLayout}`
+      }
+
+      previewLayout = 'component-iframe'
     }
 
     res.render('component-preview', { bodyClasses, previewLayout })

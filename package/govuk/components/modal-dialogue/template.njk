@@ -1,0 +1,35 @@
+{% from "../button/macro.njk" import govukButton %}
+{% set headingLevel = params.headingLevel if params.headingLevel else 2 %}
+{% set labelledBy = params.labelledBy if params.labelledBy else params.id + "-title" %}
+{% set describedBy = params.describedBy if params.describedBy else params.id + "-description" %}
+<div id="{{ params.id }}" class="govuk-modal-dialogue{% if params.classes %} {{ params.classes }}{% endif %}{% if params.open %} govuk-modal-dialogue--open{% endif %}" data-module="govuk-modal-dialogue">
+  <div class="govuk-modal-dialogue__wrapper">
+    <dialog class="govuk-modal-dialogue__box" aria-labelledby="{{ labelledBy }}" aria-describedby="{{ describedBy }}" aria-modal="true" role="{{ params.role | default('dialog') }}" tabindex="0"
+    {%- for attribute, value in params.attributes %} {{ attribute }}{% if value %}="{{ value }}"{% endif %}{% endfor %}{% if params.open %} open{% endif %}>
+      <div class="govuk-modal-dialogue__header">
+        {{ govukButton({
+          text: "×",
+          type: "button",
+          classes: "govuk-modal-dialogue__close",
+          attributes: {
+            "aria-label": "Close modal dialogue"
+          }
+        }) }}
+      </div>
+      <div class="govuk-modal-dialogue__content">
+        <h{{ headingLevel }} class="govuk-modal-dialogue__heading govuk-heading-l" id="{{ params.id }}-title">
+          {{ params.heading.html | safe if params.heading.html else params.heading.text }}
+        </h{{ headingLevel }}>
+        {% if params.description.html or params.description.text %}
+        <div class="govuk-modal-dialogue__description" id="{{ params.id }}-description">
+          {{ params.description.html | safe if params.description.html else params.description.text }}
+        </div>
+        {% endif %}
+        {% if caller %}
+          {{ caller() }}
+        {% endif %}
+      </div>
+    </dialog>
+  </div>
+  <div class="govuk-modal-dialogue__backdrop"></div>
+</div>

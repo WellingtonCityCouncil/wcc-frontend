@@ -2680,6 +2680,7 @@ exports.CharacterCount = CharacterCount;
 exports.Checkboxes = Checkboxes;
 exports.ErrorSummary = ErrorSummary;
 exports.Header = Header;
+exports.ModalDialogue = ModalDialogue;
 exports.Radios = Radios;
 exports.Tabs = Tabs;
 

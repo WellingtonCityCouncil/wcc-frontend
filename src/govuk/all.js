@@ -76,6 +76,7 @@ export {
   Checkboxes,
   ErrorSummary,
   Header,
+  ModalDialogue,
   Radios,
   Tabs
 }

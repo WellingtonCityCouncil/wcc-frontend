@@ -23,6 +23,7 @@
   // Show dialogue when opened
   .govuk-modal-dialogue--open {
     display: block;
+    z-index: 10;
   }
 
   // Wrapper to handle overflow scrolling
@@ -84,8 +85,8 @@
 
   // Remove bottom margins
   .govuk-modal-dialogue__description:last-child,
-  .govuk-modal-dialogue__description > :last-child,
-  .govuk-modal-dialogue__content > :last-child {
+  .govuk-modal-dialogue__description> :last-child,
+  .govuk-modal-dialogue__content> :last-child {
     margin-bottom: 0;
   }
 
@@ -125,9 +126,11 @@
     background-color: govuk-colour("black");
     box-shadow: none;
     font-size: $font-size;
+
     @if $govuk-typography-use-rem {
       font-size: govuk-px-to-rem($font-size);
     }
+
     @include govuk-typography-weight-bold;
     line-height: $line-height;
 

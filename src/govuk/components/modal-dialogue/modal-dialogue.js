@@ -112,7 +112,9 @@ ModalDialogue.prototype.handleClose = function (event) {
   this.$container.classList.remove('govuk-!-scroll-disabled')
 
   // Restore focus to last active element
-  this.$lastActiveElement.focus()
+  if (this.$lastActiveElement) {
+    this.$lastActiveElement.focus()
+  }
 
   // Optional 'onClose' callback
   if (typeof this.options.onClose === 'function') {

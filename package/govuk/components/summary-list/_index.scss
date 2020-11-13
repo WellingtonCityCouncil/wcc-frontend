@@ -8,13 +8,13 @@
       table-layout: fixed; // Required to allow us to wrap words that overflow.
     }
     margin: 0; // Reset default user agent styles
+    border-bottom: 1px solid $govuk-border-colour;
     @include govuk-responsive-margin(6, "bottom");
   }
 
   .govuk-summary-list__row {
     @include govuk-media-query($until: tablet) {
       margin-bottom: govuk-spacing(3);
-      border-bottom: 1px solid $govuk-border-colour;
     }
     @include govuk-media-query($from: tablet) {
       display: table-row;
@@ -31,7 +31,6 @@
       padding-top: govuk-spacing(2);
       padding-right: govuk-spacing(4);
       padding-bottom: govuk-spacing(2);
-      border-bottom: 1px solid $govuk-border-colour;
     }
   }
 
